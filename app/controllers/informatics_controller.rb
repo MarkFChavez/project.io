@@ -1,7 +1,4 @@
-class ProjectsController < ApplicationController
-
-  before_filter :authenticate_user!
-  
+class InformaticsController < ApplicationController
   def index
   end
 
