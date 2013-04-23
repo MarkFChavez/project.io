@@ -1,0 +1,16 @@
+<div class="box">
+	<%= image_tag "pic.jpg", :style => "width:160px;height:160px;padding-right:10px", :class => 'pull-left' %>
+	<div>
+		<p>
+			<span style='font-weight:bold'> <%= "#{current_user.first_name} #{current_user.last_name}" %> </span>
+			<br />
+			<span class="label label-important"> <%= current_user.email %> </span>
+
+			<ul class="unstyled">
+				<li> <%= link_to "View your Profile", "#" %> </li>
+				<li> <%= link_to "View your Avatars", user_avatars_path(current_user) %> </li>
+			</ul>
+		</p>
+	</div>
+	<div class="clearfix"></div>
+</div>

@@ -2,6 +2,10 @@ ProjectIo::Application.routes.draw do
 
   devise_for :users
 
+  resources :users do
+    resources :avatars
+  end
+
   resources :informatics
   resources :projects
 

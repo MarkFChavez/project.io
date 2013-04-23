@@ -1,17 +1,7 @@
 
 <div class="row-fluid">
 	<div class="span4">
-		<div class="box">
-			<%= image_tag "pic.jpg", :style => "width:160px;height:160px;padding-right:10px", :class => 'pull-left' %>
-			<div>
-				<p>
-					<span style='font-weight:bold'> <%= "#{current_user.first_name} #{current_user.last_name}" %> </span>
-					<br />
-					<span class="label label-important"> <%= current_user.email %> </span>
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
+		<%= render 'profile_box' %>
 	</div>
 
 	<div class="span4">

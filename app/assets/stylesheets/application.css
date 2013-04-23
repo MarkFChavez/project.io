@@ -50,3 +50,12 @@ body {
   background-color: #FFF;
   padding: 19px 29px 29px;
 }
+
+.avatar {
+  display: inline-block;
+  width: 160px;
+  border: 1px solid #333;
+  padding: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
