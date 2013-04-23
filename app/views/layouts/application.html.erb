@@ -11,9 +11,9 @@
 	<div class="navbar navbar-inverse navbar-fixed-top">
 	  <div class="navbar-inner">
 	  	<div class="container-fluid">
-		    <a class="brand" href="#"> Project.IO </a>
+		    <%= link_to "<?Project.IO?>", projects_path, :class => "brand" %>
 		    <ul class="nav">
-		      <li class="active"><a href="#">Home</a></li>
+		      <li class="active"> <%= link_to "Home", projects_path %> </li>
 		      
 		      <% if user_signed_in? %>
 		      	<li class='active'>
@@ -38,18 +38,6 @@
 	</div>
 
 	<div style="margin-top:50px" class='container-fluid'>
-
-		<% if notice %>
-			<div class='alert alert-success'>
-				<%= notice %>
-			</div>
-		<% end %>
-
-		<% if alert %>
-			<div class='alert alert-error'>
-				<%= alert %>
-			</div>
-		<% end %>
 
 		<%= yield %>
 
