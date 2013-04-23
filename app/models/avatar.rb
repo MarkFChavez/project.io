@@ -5,4 +5,10 @@ class Avatar < ActiveRecord::Base
   has_attached_file :photo
 
   validates :photo, :presence => true
+
+  def set_as_avatar
+  	#set all to false, then specific avatar to true
+  	Avatar.update_all(:active => false)
+  	self.active = true
+  end
 end

@@ -1,4 +1,4 @@
 
 <div class="avatar" title="Set as avatar">
-	<%= image_tag avatar.photo.url, :style => "width:160px;height:160px" %>
+	<%= link_to(image_tag(avatar.photo.url, :style => "width:160px;height:160px"), set_as_avatar_user_avatar_path(current_user,avatar), :confirm => "Set as your avatar?", :method => :put) %>
 </div>

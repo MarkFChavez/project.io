@@ -10,4 +10,18 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
   # attr_accessible :title, :body
   has_many :avatars, :dependent => :destroy
+
+  def has_avatar_set?
+    has_avatar = avatars.find_by_active(true)
+
+    if !has_avatar.nil?
+      true
+    else
+      false
+    end
+  end
+
+  def get_avatar
+    avatar = avatars.find_by_active(true)
+  end
 end

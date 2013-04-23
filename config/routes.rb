@@ -3,7 +3,9 @@ ProjectIo::Application.routes.draw do
   devise_for :users
 
   resources :users do
-    resources :avatars
+    resources :avatars do
+      put :set_as_avatar, :on => :member
+    end 
   end
 
   resources :informatics

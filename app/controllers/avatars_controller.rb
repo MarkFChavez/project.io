@@ -32,4 +32,18 @@ class AvatarsController < ApplicationController
   def destroy
   end
 
+  #PUT
+  def set_as_avatar
+    @avatar = Avatar.find(params[:id])
+
+    #set all to false
+    @avatar.set_as_avatar
+
+    if @avatar.save
+      redirect_to user_avatars_path(current_user), :notice => "New avatar set"
+    else
+      redirect_to user_avatars_path(current_user), :alert => "Avatar not set"
+    end
+  end
+
 end

@@ -1,5 +1,10 @@
 <div class="box">
-	<%= image_tag "pic.jpg", :style => "width:160px;height:160px;padding-right:10px", :class => 'pull-left' %>
+	<% if !current_user.has_avatar_set? %>
+		<%= image_tag "pic.jpg", :style => "width:160px;height:160px;padding-right:10px", :class => 'pull-left' %>
+	<% else %>
+		<%= image_tag current_user.get_avatar.photo.url, :style => "width:160px;height:160px;padding-right:10px", :class => 'pull-left' %>
+	<% end %>
+
 	<div>
 		<p>
 			<span style='font-weight:bold'> <%= "#{current_user.first_name} #{current_user.last_name}" %> </span>
