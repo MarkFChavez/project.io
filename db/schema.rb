@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423083038) do
+ActiveRecord::Schema.define(:version => 20130423141859) do
+
+  create_table "avatars", :force => true do |t|
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "user_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.boolean  "active"
+  end
+
+  add_index "avatars", ["user_id"], :name => "index_avatars_on_user_id"
 
   create_table "projects", :force => true do |t|
     t.string   "title"

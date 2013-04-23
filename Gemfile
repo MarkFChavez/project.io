@@ -14,6 +14,7 @@ group :production do
 end
 
 gem 'devise'
+gem 'paperclip'
 
 
 # Gems used only for assets and not required
