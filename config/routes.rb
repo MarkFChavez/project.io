@@ -4,13 +4,15 @@ ProjectIo::Application.routes.draw do
 
   
     resources :users do
+      resources :projects
+
       resources :avatars do
         put :set_as_avatar, :on => :member
       end 
     end
 
+    resources :dashboards
     resources :informatics
-    resources :projects
   
 
   root :to => "informatics#index"

@@ -1,0 +1,21 @@
+<div class="box">
+	<% if !current_user.has_avatar_set? %>
+		<%= image_tag "pic.jpg", :style => "width:160px;height:160px;padding-right:10px", :class => 'pull-left' %>
+	<% else %>
+		<%= image_tag current_user.get_avatar.photo.url, :style => "width:160px;height:160px;padding-right:10px", :class => 'pull-left' %>
+	<% end %>
+
+	<div>
+		<p>
+			<span style='font-weight:bold'> <%= "#{current_user.first_name} #{current_user.last_name}" %> </span>
+			<br />
+			<span class="label label-important"> <%= current_user.email %> </span>
+
+			<ul class="unstyled">
+				<li> <%= link_to "View your Projects", "#" %> </li>
+				<li> <%= link_to "View your Avatars", user_avatars_path(current_user) %> </li>
+			</ul>
+		</p>
+	</div>
+	<div class="clearfix"></div>
+</div>

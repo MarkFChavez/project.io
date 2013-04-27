@@ -1,8 +1,9 @@
-class ProjectsController < ApplicationController
+class DashboardsController < ApplicationController
 
   before_filter :authenticate_user!
   
   def index
+    @projects = Project.latest
   end
 
   def show
@@ -22,5 +23,4 @@ class ProjectsController < ApplicationController
 
   def destroy
   end
-  
 end

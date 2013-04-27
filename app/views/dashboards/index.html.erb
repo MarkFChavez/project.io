@@ -1,0 +1,38 @@
+
+<div class="row-fluid">
+	<div class="span4">
+		<%= render 'profile_box' %>
+	</div>
+
+	<div class="span4">
+		<div class="box">
+			<p class="lead"> Latest Projects </p>
+			<hr />
+
+			<% if !@projects.empty? %>
+				<% @projects.each do |project| %>
+					<div class="alert alert-success">
+						<span style="font-weight:bold"> <%= project.title.upcase %> </span>
+					</div>
+				<% end %>
+
+				<%= link_to "Show All", "#" %>
+			<% else %>
+				<div class="alert alert-warning">
+					You have no projects yet.
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="span4">
+		<div class="box">
+			<p class="lead"> News Feed </p>
+			<hr />
+
+			<div class="alert alert-warning">
+				You have no updates yet.
+			</div>
+		</div>
+	</div>
+</div>
