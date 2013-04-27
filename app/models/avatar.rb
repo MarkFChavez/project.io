@@ -4,11 +4,16 @@ class Avatar < ActiveRecord::Base
 
   has_attached_file :photo
 
-  validates :photo, :presence => true
+  validates_attachment_presence :photo
+  validates_attachment_size :photo, :less_than => 1.megabyte
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg','image/png','image/gif']
 
   def set_as_avatar
   	#set all to false, then specific avatar to true
-  	Avatar.update_all(:active => false)
+  	a = Avatar.where(:active => true).first
+  	a.active = false
+  	a.save
+  	
   	self.active = true
   end
 end

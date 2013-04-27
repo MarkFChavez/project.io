@@ -2,14 +2,16 @@ ProjectIo::Application.routes.draw do
 
   devise_for :users
 
-  resources :users do
-    resources :avatars do
-      put :set_as_avatar, :on => :member
-    end 
-  end
+  
+    resources :users do
+      resources :avatars do
+        put :set_as_avatar, :on => :member
+      end 
+    end
 
-  resources :informatics
-  resources :projects
+    resources :informatics
+    resources :projects
+  
 
   root :to => "informatics#index"
 
